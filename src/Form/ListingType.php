@@ -19,7 +19,7 @@ class ListingType extends AbstractType
             ->add('description')
             ->add('mileage')
             ->add('price')
-            ->add('createdAt')
+//            ->add('createdAt')
             ->add('produced_year')
             ->add('model',EntityType::class,[
                 'class'=>Model::class,

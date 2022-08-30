@@ -2,9 +2,14 @@
 
 {% block title %}Nouveau Modèle{% endblock %}
 {% block body %}
-    <h1>Create new Model</h1>
 
-    {{ include('back/model/_form.html.twig') }}
+    <div class="container">
+        <h1>Create new Model</h1>
 
-    <a href="{{ path('app_back_model_index') }}" class="btn btn-dark">back to list</a>
+        {{ include('back/model/_form.html.twig') }}
+
+        <a href="{{ path('app_back_model_index') }}" class="btn btn-dark">back to list</a>
+    </div>
+
+
 {% endblock %}

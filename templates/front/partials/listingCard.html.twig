@@ -1,8 +1,10 @@
 <a class="main-card-listing row my-2 mx-1 " href="{{ path('app_detail', {'id': listing.id}) }}">
-    <div class="col-7 d-flex flex-column justify-content-evenly">
+    <div class="card-container-Img">
+        <img src="https://linfotoutcourt.com/wp-content/uploads/2014/07/Les-Toyopets-2-voitures-Pok%C3%A9mon-Toyota_toyopet-pokemon-pikachu-fennekin-car-tokyo-toy-show-2014-4.jpg">
+    </div>
+    <div class=" d-flex flex-column justify-content-evenly">
         <div>
             <h2>{{ listing.title}}</h2>
-            <p>prix de vente {{ listing.price }} €</p>
             <p>kilométrage {{ listing.mileage}} Km </p>
             <p> Année de production  {{ listing.producedyear }}</p>
         </div>

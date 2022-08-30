@@ -1,0 +1,21 @@
+.btn-dark{
+  border-radius: 10px;
+  border: solid 0.2rem darken(#FFCB05, 10%);
+  background-color: darken(#FFCB05, 5%);
+
+  &:hover, &:focus, &:active {
+    background-color: #FFCB05;
+    border: solid 0.2rem darken(#FFCB05, 25%);
+    box-shadow: 0 0 0 0.25rem lighten(#FFCB05, 30%);
+  }
+
+}
+
+.menu{
+  background-color: #3D7DCA;
+  a{
+    color: #FFCB05;
+  }
+}
+
+
