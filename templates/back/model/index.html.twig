@@ -1,0 +1,41 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Les modèles{% endblock %}
+
+{% block body %}
+    <h1>Model index</h1>
+
+    <table class="table table-dark table-hover table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for model in models %}
+            <tr>
+                <td>{{ model.id }}</td>
+                <td>{{ model.name }}</td>
+                <td>{{ model.description }}</td>
+                <td>
+                    <a href="{{ path('app_back_model_show', {'id': model.id}) }}">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
+                    <a href="{{ path('app_back_model_edit', {'id': model.id}) }}">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_model_new') }}" class="btn btn-dark">Create new</a>
+{% endblock %}
