@@ -1,11 +1,10 @@
-<a class="main-card-listing row" href="">
+<a class="main-card-listing row my-2 mx-1 " href="{{ path('app_detail', {'id': listing.id}) }}">
     <div class="col-7 d-flex flex-column justify-content-evenly">
         <div>
             <h2>{{ listing.title}}</h2>
             <p>prix de vente {{ listing.price }} €</p>
-            <p>kilométrage {{ listing.mileage}} </p>
-{#            <p>{{ listing.produced_year }}</p>#}
-          <p> {{ listing.createdAt|date('d/m/Y') }} </p>
+            <p>kilométrage {{ listing.mileage}} Km </p>
+            <p> Année de production  {{ listing.producedyear }}</p>
         </div>
         <p class="m-0"></p>
     </div>

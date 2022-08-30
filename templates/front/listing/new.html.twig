@@ -1,0 +1,9 @@
+{% extends 'front/base.html.twig' %}
+
+{% block body %}
+    <h1>Create new Listing</h1>
+
+    {{ include('front/listing/_form.html.twig') }}
+
+    <a href="{{ path('app_home') }}">back to list</a>
+{% endblock %}

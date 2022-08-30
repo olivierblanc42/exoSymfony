@@ -26,11 +26,28 @@ class HomeController extends AbstractController
         $listing = $paginator->paginate(
             $qb,
             $request->query->getInt('page', 1),
-            9
+            12
         );
          dump($listing);
         return $this->render('front/home/index.html.twig', [
             'listing'=> $listing
         ]);
     }
+
+    #[Route('/detail{id}', name: 'app_detail')]
+    public function detail(
+        ListingRepository $listingRepository,
+        $id
+    ): Response
+    {
+
+        $qb = $listingRepository->find($id);
+
+
+        return $this->render('front/partials/detailListing.html.twig', [
+            'listing'=> $qb
+        ]);
+    }
+
+
 }

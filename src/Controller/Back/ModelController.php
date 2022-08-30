@@ -5,6 +5,8 @@ namespace App\Controller\Back;
 use App\Entity\Model;
 use App\Form\ModelType;
 use App\Repository\ModelRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Lexik\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,10 +16,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class ModelController extends AbstractController
 {
     #[Route('/', name: 'app_back_model_index', methods: ['GET'])]
-    public function index(ModelRepository $modelRepository): Response
+    public function index(
+        ModelRepository $modelRepository,
+        PaginatorInterface $paginator,
+        Request $request
+
+    ): Response
     {
+        $qb = $modelRepository->getQbAll();
+        $models = $paginator->paginate(
+            $qb,
+            $request->query->getInt('page', 1),
+            9
+        );
+
+
+
         return $this->render('back/model/index.html.twig', [
-            'models' => $modelRepository->findAll(),
+            'models' => $models,
         ]);
     }
 

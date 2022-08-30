@@ -21,9 +21,6 @@ class Listing
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $produced_year = null;
-
-    #[ORM\Column]
     private ?int $mileage = null;
 
     #[ORM\Column]
@@ -34,6 +31,9 @@ class Listing
 
     #[ORM\ManyToOne(inversedBy: 'listings')]
     private ?Model $model = null;
+
+    #[ORM\Column]
+    private ?int $produced_year = null;
 
     public function getId(): ?int
     {
@@ -60,18 +60,6 @@ class Listing
     public function setDescription(?string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getProducedYear(): ?int
-    {
-        return $this->produced_year;
-    }
-
-    public function setProducedYear(int $produced_year): self
-    {
-        $this->produced_year = $produced_year;
 
         return $this;
     }
@@ -120,6 +108,18 @@ class Listing
     public function setModel(?Model $model): self
     {
         $this->model = $model;
+
+        return $this;
+    }
+
+    public function getProducedYear(): ?int
+    {
+        return $this->produced_year;
+    }
+
+    public function setProducedYear(int $produced_year): self
+    {
+        $this->produced_year = $produced_year;
 
         return $this;
     }

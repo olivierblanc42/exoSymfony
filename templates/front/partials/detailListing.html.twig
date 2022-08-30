@@ -1,0 +1,25 @@
+
+{% extends 'front/base.html.twig' %}
+
+
+
+
+{% block body %}
+    <div class="card my-5 ">
+        <div class="card-header">
+            {{ listing.title }}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Prix de vente {{ listing.price }} €</p>
+                <p>Kilométrage {{ listing.mileage}} Km </p>
+                <p>Année de production  {{ listing.producedyear }}</p>
+                <p>Crée le {{ listing.createdAt|date('d/m/Y') }} </p>
+                <div>
+                    {{ listing.description }}
+                </div>
+                <p> crée le {{ listing.createdAt|date('d/m/Y') }} </p>
+            </blockquote>
+        </div>
+    </div>
+{% endblock %}
